@@ -1,9 +1,10 @@
 <?php
- 
+
 namespace App\Http\Requests;
- 
+
 use Illuminate\Foundation\Http\FormRequest;
- 
+use Illuminate\Validation\Rule;
+
 class UpdateAnggotaRequest extends FormRequest
 {
     /**
@@ -13,7 +14,7 @@ class UpdateAnggotaRequest extends FormRequest
     {
         return true;
     }
- 
+
     /**
      * Get the validation rules that apply to the request.
      *
@@ -22,12 +23,25 @@ class UpdateAnggotaRequest extends FormRequest
     public function rules(): array
     {
         // Get anggota ID from route parameter
-        $anggotaId = $this->route('anggota');
-        
+        $anggota = $this->route('anggota');
+        $anggotaId = is_object($anggota) && method_exists($anggota, 'getKey')
+            ? $anggota->getKey()
+            : $anggota;
+
         return [
-            'kode_anggota' => 'required|string|max:20|unique:anggota,kode_anggota,' . $anggotaId,
+            'kode_anggota' => [
+                'required',
+                'string',
+                'max:20',
+                Rule::unique('anggota', 'kode_anggota')->ignore($anggotaId, 'id'),
+            ],
             'nama' => 'required|string|max:100',
-            'email' => 'required|email|unique:anggota,email,' . $anggotaId . '|max:100',
+            'email' => [
+                'required',
+                'email',
+                'max:100',
+                Rule::unique('anggota', 'email')->ignore($anggotaId, 'id'),
+            ],
             'telepon' => [
                 'required',
                 'regex:/^(\+62|62|0)[0-9]{9,12}$/',
@@ -51,7 +65,7 @@ class UpdateAnggotaRequest extends FormRequest
             'status' => 'required|in:Aktif,Nonaktif',
         ];
     }
- 
+
     /**
      * Get custom error messages.
      */

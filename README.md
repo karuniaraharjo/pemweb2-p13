@@ -8,4 +8,4 @@
 ![Hasil Export Anggota dari Excel](ss-testing/hasil-ekspor.png)
 
 ## 3. Advanced Search & Filter
-![Advanced Search & Filter](ss-testing/advanced-search-filter.png)
+![Advanced Search & Filter](ss-testing/Advanced-Search-Filter.png)

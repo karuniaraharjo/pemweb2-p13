@@ -1,13 +1,11 @@
 # TUGAS PEMROGRAMAN WEB 2 - PERTEMUAN 12
 
-## 1. Validation Rules Advanced
-![Validation Rules Advanced](ss-testing/validation-rule-advance.png)
+## 1. Auto-Generate Kode Anggota
+![Auto-Generate Kode Anggota](ss-testing/auto-generate-kode-anggota.png)
 
-## 2. Bulk Delete Operations
-![Bulk Delete Selection](ss-testing/select-bulk-delete.png)
-![Bulk Delete Confirmation](ss-testing/confirm-bulk-delete.png)
-![Bulk Delete Success](ss-testing/result-bulk-delete.png)
+## 2. Export Anggota ke Excel 
+![Export Anggota ke Excel](ss-testing/ekspor-excel.png)
+![Hasil Export Anggota dari Excel](ss-testing/hasil-ekspor.png)
 
-## 3. Export Buku ke CSV
-![Export to CSV](ss-testing/download-csv.png)
-![CSV Content](ss-testing/result-csv.png)
+## 3. Advanced Search & Filter
+![Advanced Search & Filter](ss-testing/advanced-search-filter.png)

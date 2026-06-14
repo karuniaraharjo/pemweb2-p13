@@ -41,5 +41,9 @@ Route::get('/buku/export', [BukuController::class, 'export'])
 // Resource route untuk Buku
 Route::resource('buku', BukuController::class);
 
+// Specific routes for Anggota
+Route::get('/anggota/search', [AnggotaController::class, 'search'])->name('anggota.search');
+Route::get('/anggota/export', [AnggotaController::class, 'export'])->name('anggota.export');
+
 // Resource route untuk Anggota (akan dibuat nanti)
 Route::resource('anggota', AnggotaController::class);
